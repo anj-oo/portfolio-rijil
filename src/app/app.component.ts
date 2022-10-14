@@ -11,9 +11,9 @@ export class AppComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute) { }
   
   ngOnInit(): void {
-    this.activeRoute.fragment.subscribe((val) => {
-      this.jumpTo(val);
-    });
+    // this.activeRoute.fragment.subscribe((val) => {
+    //   this.jumpTo(val);
+    // });
   }
 
   jumpTo(section:any) {

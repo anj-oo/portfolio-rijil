@@ -1,8 +1,8 @@
 img {
     width:100%;
     height:100%;
-
 }
+
 .flex-container {
     display: flex;
 }
@@ -16,9 +16,16 @@ img {
     margin-right: 20px;
     margin-left: 20px;
 }
+
 .flex-child:last-child {
     margin-right: 20px;
 }
-P{
+
+p{
 font-family: 'Calligraffitti', cursive;
+font-size: 15px;
+small{
+    font-size: medium;
+    font-weight: 500;
+}
 }

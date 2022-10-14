@@ -1,5 +1,5 @@
 import { Arts } from "./../../model/arts";
-import { artsServices } from "./../../services/arts.services";
+import { ArtsServices } from "./../../services/arts.services";
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtComponent implements OnInit {
 
-  artImages:Arts[] = [];
-  constructor(private artsServices: artsServices) { }
+
+  
+  constructor(private artsServices: ArtsServices) { }
 
   ngOnInit(): void {
-    // this.artImages = this.artsServices.arts;
   }
 
 }

@@ -6,19 +6,27 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ArtComponent } from './components/art/art.component';
+import { ArtsServices } from './services/arts.services';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { GridListComponent } from './components/grid-list/grid-list.component'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ContactComponent,
-    ArtComponent
+    ArtComponent,
+    GridListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatGridListModule,
+    FormsModule
+
   ],
-  providers: [],
+  providers: [ArtsServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
