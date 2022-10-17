@@ -8,8 +8,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ArtComponent } from './components/art/art.component';
 import { ArtsServices } from './services/arts.services';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { GridListComponent } from './components/grid-list/grid-list.component'; 
+import { GridListComponent } from './components/grid-list/grid-list.component';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     MatGridListModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [ArtsServices],

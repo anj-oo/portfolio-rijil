@@ -1,7 +1,7 @@
 
-<mat-grid-list  cols="2" rowHeight="2:2" gutterSize="10px"  >
+<mat-grid-list  cols="4" rowHeight="1:1" gutterSize="50px"  >
 <mat-grid-tile *ngFor="let a of artImages" colspan="1" >
-    <img src="{{a.image}}"  class="tile-image">
+    <img src="{{a.image}}"  class="tile-image"  alt =''>
     <mat-grid-tile-footer>
         <h3>{{a.title}}</h3>
     </mat-grid-tile-footer>

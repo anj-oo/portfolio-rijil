@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'rijil';
-  constructor(private activeRoute: ActivatedRoute) { }
-  
+  constructor() { }
+
   ngOnInit(): void {
     // this.activeRoute.fragment.subscribe((val) => {
     //   this.jumpTo(val);
