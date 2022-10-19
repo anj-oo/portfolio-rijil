@@ -1,0 +1,80 @@
+<div class="container p-3 my-3 ">
+  <div class="row h-100">
+    <div class="col ">
+      <h1>GET IN TOUCH</h1>
+      <form #myForm="ngForm" (ngSubmit)="sendMessage(myForm.value)">
+
+        <div class="form-group mb-3">
+          <div class="col-xs-3">
+            <label for="fname">Name</label>
+            <input type="text"
+                   class="form-control form-control-lg"
+                   id="fname"
+                   [(ngModel)]="name"
+                   #fName="ngModel"
+                   name="fname"
+                   required
+                   aria-describedby="emailHelp">
+            <small *ngIf="fName.invalid && fName.touched">Required</small>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <div class="col-xs-3">
+            <label for="mail">Email</label>
+            <input type="email"
+                   class="form-control form-control-lg"
+                   id="mail"
+                   [(ngModel)]="email" #mail="ngModel"
+                   required
+                   email
+                   name="email">
+            <small *ngIf="mail.invalid && mail.touched">Required</small>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <div class="col-xs-3">
+            <label for="msg">Message</label>
+            <textarea type="text"
+                      class="form-control form-control-lg"
+                      id="msg"
+                      ngModel required
+                      [(ngModel)]="message" #msg="ngModel"
+                      name="message"></textarea>
+            <small *ngIf="msg.invalid && msg.touched">Required</small>
+          </div>
+        </div>
+
+        <!--        <div class="form-group mb-3">-->
+        <!--          <span class="form-check form-check-inline" *ngFor="let gen of gender" >-->
+        <!--          <input type="radio"  class="form-check-input"-->
+        <!--                 id="{{gen.id}}"-->
+        <!--                 [ngModel]="defaultGender"-->
+        <!--                 name="gender"-->
+        <!--                 #gender="ngModel"-->
+        <!--                 value="{{gen.value}}">-->
+        <!--          <label class="form-check-label" for="{{gen.value}}">{{gen.value}}</label>-->
+        <!--            </span>-->
+        <!--        </div>-->
+        <!--        <button (click)="setDefaultValue()">Default</button>-->
+
+        <!--        <input type="submit" value="{{editMode ? 'Update': 'Submit'}}" class="btn btn-dark" [disabled]="!myForm.valid">-->
+        <input type="submit" class="btn btn-dark" [disabled]="!myForm.valid">
+      </form>
+    </div>
+    <div class="col">
+      <!--      <p *ngIf="isFetching && errorMessage===null"> Loading....</p>-->
+      <!--      <p *ngIf="errorMessage !=null"> {{errorMessage}}</p>-->
+
+      <!--      <div *ngFor="let user of userAdded">-->
+      <!--        <h3>{{user.fname}}</h3>-->
+      <!--        <p>{{user.message}}</p>-->
+      <!--        <button (click)="onDeleteUser(user.id)">Delete</button>-->
+      <!--        <button (click)="onEdit(user.id)">Edit</button>-->
+      <!--      </div>-->
+    </div>
+  </div>
+</div>
+
+<p>test works!</p>
