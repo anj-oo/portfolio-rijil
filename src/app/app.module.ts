@@ -11,6 +11,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { GridListComponent } from './components/grid-list/grid-list.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
+import {EmailService} from "./services/email.service";
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {HttpClientModule} from "@angular/common/http";
     AboutComponent,
     ContactComponent,
     ArtComponent,
-    GridListComponent
+    GridListComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
 
   ],
-  providers: [ArtsServices],
+  providers: [ArtsServices, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

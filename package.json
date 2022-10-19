@@ -1,6 +1,6 @@
 {
   "name": "rijil",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@emailjs/browser": "^3.7.0",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "rxjs": "~7.5.0",

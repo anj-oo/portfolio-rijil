@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {map} from "rxjs";
-import {Feedback} from "../../model/feedback";
+import {UsersService} from "../../services/users.service";
+import {EmailService} from "../../services/email.service";
+
 
 @Component({
   selector: 'app-contact',
@@ -11,72 +11,25 @@ import {Feedback} from "../../model/feedback";
 })
 export class ContactComponent implements OnInit {
 
-  // form = {
-  //   name: '',
-  //   email: '',
-  //   message: ''
-  // };
-  @ViewChild('myForm')  form: NgForm | undefined;
+  @ViewChild('myForm') form: NgForm | undefined;
   name: any;
   email: any;
   message: any;
-  gender = [
-    {id:1, value: 'Male'},
-    {id:2, value: 'Female'},
-    {id:3, value: 'Other'}
-  ]
-  defaultGender= 'Male';
+
   user: { name: string; email: string; message: string; } | undefined;
-  feedback: Feedback[]
+  isFetching = false;
+  errorMessage = null;
 
-  constructor(private http: HttpClient) {
-
+  constructor(private userService: UsersService, private emailService: EmailService) {
   }
 
-  ngOnInit(): void {
-    this.fetchUserData();
+  ngOnInit() {
   }
 
-  onSubmit() {
-    this.user = this.form?.control.value;
-    const headers = new HttpHeaders({user:'rijil'})
-    this.http.post
-     ('https://portfoliorijil-default-rtdb.firebaseio.com/user.json',
-      this.user, {headers:headers})
-      .subscribe((res)=>{
-        console.log(res);
-      });
-  }
-
-  private fetchUserData(){
-    this.http.get('https://portfoliorijil-default-rtdb.firebaseio.com/user.json').
-    pipe(map((res: {// @ts-ignore
-      [key:string], Feedback})=> {
-      const users=[];
-      for (const key in res){
-        if(res.hasOwnProperty(key)) {
-          users.push({...res[key], id: key});
-        }
-      }
-      return users;
-    })).
-    subscribe((res)=>{
-      console.log(res);
-    })
-  }
-
-  setDefaultValue() {
-    //SET VALUES
-    // this.form?.setValue({
-    //   fname: 'Ann',
-    //   email: 'kvanju.kannur@gmail.com',
-    //   message:'Hlooooo',
-    //   gender:'Female'
-    // });
-    //PATCH VALUES
-    this.form?.form.patchValue({
-      fname: 'Ann',
-
-    });
+  sendMessage(user: { fname: string, email: string, message: string }){
+    this.isFetching = true;
+    this.emailService.sendToMail(user);
+    this.isFetching = false;
+    this.form.reset();
   }
 }
