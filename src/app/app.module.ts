@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import {EmailService} from "./services/email.service";
 import { TestComponent } from './components/test/test.component';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { TestComponent } from './components/test/test.component';
     AppRoutingModule,
     MatGridListModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
 
   ],
   providers: [ArtsServices, EmailService],

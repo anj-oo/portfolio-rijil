@@ -9,7 +9,7 @@ img {
 
 .flex-child {
     flex: 1;
-    border: 2px solid #ffffff;
+    //border: 2px solid #ffffff;
 }
 
 .flex-child:first-child {
@@ -20,7 +20,14 @@ img {
 .flex-child:last-child {
     margin-right: 20px;
 }
-
+h1{
+  font-size: 4rem;
+  font-family: 'Calligraffitti', cursive;
+}
+h2{
+  font-family: 'Calligraffitti', cursive;
+  font-size: 2rem;
+}
 p{
 font-family: 'Calligraffitti', cursive;
 font-size: 15px;
@@ -28,4 +35,13 @@ small{
     font-size: medium;
     font-weight: 500;
 }
+}
+.bg{
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
 }
