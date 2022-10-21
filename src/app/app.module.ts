@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,8 +14,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {EmailService} from "./services/email.service";
 import { TestComponent } from './components/test/test.component';
 import {MatIconModule} from '@angular/material/icon';
+import {LottieModule} from "ngx-lottie";
+import player from 'lottie-web';
+import { NgxSpinnerModule } from "ngx-spinner";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
-
+export function playerFactory() {
+  return player;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,9 +37,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatGridListModule,
     FormsModule,
     HttpClientModule,
-    MatIconModule
-
+    MatIconModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    [LottieModule.forRoot({ player: playerFactory })],
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ArtsServices, EmailService],
   bootstrap: [AppComponent]
 })

@@ -37,30 +37,6 @@ export class ArtsServices {
         },        {
             "title": "3",
             "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
-        },   {
-            "title": "3",
-            "image": "/assets/images/art10.jpg"
         },
     ];
 

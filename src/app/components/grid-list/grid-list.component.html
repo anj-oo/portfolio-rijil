@@ -1,10 +1,7 @@
 
-<mat-grid-list  cols="4" rowHeight="1:1" gutterSize="50px"  >
-<mat-grid-tile *ngFor="let a of artImages" colspan="1" >
+<mat-grid-list  [cols]="breakpoint"  (window:resize)="handleSize($event)" gutterSize="10"  >
+<mat-grid-tile class="hover-shadow" *ngFor="let a of artImages" colspan="1" >
     <img src="{{a.image}}"  class="tile-image"  alt =''>
-<!--    <mat-grid-tile-footer>-->
-<!--&lt;!&ndash;        <h3>{{a.title}}</h3>&ndash;&gt;-->
-<!--    </mat-grid-tile-footer>-->
 </mat-grid-tile>
 
 </mat-grid-list>

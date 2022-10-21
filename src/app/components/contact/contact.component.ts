@@ -2,6 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {UsersService} from "../../services/users.service";
 import {EmailService} from "../../services/email.service";
+import {AnimationOptions} from "ngx-lottie";
+import {AnimationItem} from "ngx-lottie/lib/symbols";
 
 
 @Component({
@@ -17,7 +19,7 @@ export class ContactComponent implements OnInit {
   message: any;
 
   user: { name: string; email: string; message: string; } | undefined;
-  isFetching = false;
+  isSuccess = false;
   errorMessage = null;
 
   constructor(private userService: UsersService, private emailService: EmailService) {
@@ -27,9 +29,14 @@ export class ContactComponent implements OnInit {
   }
 
   sendMessage(user: { fname: string, email: string, message: string }){
-    this.isFetching = true;
     this.emailService.sendToMail(user);
-    this.isFetching = false;
     this.form.reset();
+  }
+  options: AnimationOptions = {
+    path: '/assets/feedback.json',
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
   }
 }

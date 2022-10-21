@@ -1,12 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-light navbar-static-top">
 
   <div class="container-fluid">
+    <a class="nav-link " [routerLink]="['/About']">Rijil Raj</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav  mx-auto">
         <li class="nav-item"
             routerLinkActive="active-link"
             [routerLinkActiveOptions]="{exact: true}">
@@ -22,6 +23,13 @@
           >Contact</a>
         </li>
       </ul>
+
+      <ul class="navbar-nav  mr-auto">
+        <li class="nav-item">
+          <a href="https://www.instagram.com/" class="bi bi-instagram text-dark"></a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>
@@ -32,9 +40,9 @@
 <!--  <mat-icon>share</mat-icon>-->
 <!--</div>-->
 
-<footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-      <mat-icon>share</mat-icon>
-  </div>
-</footer>
+<!--<footer class="footer mt-auto py-3 bg-light">-->
+<!--  <div class="container">-->
+<!--      <mat-icon>share</mat-icon>-->
+<!--  </div>-->
+<!--</footer>-->
 

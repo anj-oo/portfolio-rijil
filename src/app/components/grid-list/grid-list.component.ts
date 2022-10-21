@@ -1,4 +1,4 @@
-import { ArtsServices } from "./../../services/arts.services";
+import { ArtsServices } from "../../services/arts.services";
 import { Component, OnInit } from '@angular/core';
 import { Arts } from "../../model/arts";
 
@@ -9,10 +9,15 @@ import { Arts } from "../../model/arts";
 })
 export class GridListComponent implements OnInit {
   artImages: Arts[]= []
+  breakpoint;
   constructor(private artsServices: ArtsServices ) { }
 
   ngOnInit(): void {
     this.artImages = this.artsServices.arts;
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 4;
+  }
+  handleSize(event) {
+    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 4;
   }
 
 }
